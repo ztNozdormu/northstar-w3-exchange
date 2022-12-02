@@ -1,13 +1,13 @@
-package com.w3.exchange.northstarw3exchange;
+package com.w3.exchange.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NorthstarW3ExchangeApplication {
+public class W3CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NorthstarW3ExchangeApplication.class, args);
+        SpringApplication.run(W3CommonApplication.class, args);
     }
 
 }

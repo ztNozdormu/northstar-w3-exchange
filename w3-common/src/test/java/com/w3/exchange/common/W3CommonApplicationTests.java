@@ -1,10 +1,10 @@
-package com.w3.exchange.northstarw3exchange;
+package com.w3.exchange.common;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NorthstarW3ExchangeApplicationTests {
+class W3CommonApplicationTests {
 
     @Test
     void contextLoads() {
