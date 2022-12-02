@@ -14,13 +14,13 @@
 
     <properties>
         <w3.exchange.version>0.0.1</w3.exchange.version>
-        <java.version>17</java.version>
+        <java.version>11</java.version>
         <maven.plugin.version>3.8.1</maven.plugin.version>
         <spring.plugin.version>2.0.0.RELEASE</spring.plugin.version>
         <spring.boot.version>3.0.0</spring.boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <okhttp.version>3.11.0</okhttp.version>
+        <okhttp.version>4.9.2</okhttp.version>
     </properties>
 
     <modules>
