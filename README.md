@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 # northstar-w3-exchange
-web3交易所功能聚合模块
-=======
-# Getting Started
-    WEB3 EXCHANGE CLIENT & Third party data service provider Aggregation of functions
-#  northstar-w3-exchange
-     交易所功能聚合模块
-
-### 交易所客户端 & 第三方服务数据提供商
+> web3交易所功能聚合模块
+> WEB3 EXCHANGE CLIENT & Third party data service provider Aggregation of functions
+> 
+## 交易所客户端 & 第三方服务数据提供商
   * web3交易所
     1. cex交易所
       * binance
@@ -25,15 +20,19 @@ web3交易所功能聚合模块
          https://github.com/binance/binance-connector-java
   ```
 ### 项目结构
+```
 northstar-w3-exchange
-  ----w3-common
-  ----w3-cex
-    --binance
-    --okx
-    --gate 
-  ----w3-dex
-    --uni
-    --panacake
-  ----w3-third
-    -- ...
->>>>>>> b2204dd (w3-exchange项目初始化)
+├── w3-common -- 公共模块
+├── w3-cex -- 中心化交易所交易相关业务模块
+├    ├── w3-binance -- 币安交易所
+├    ├── w3-okx -- 欧易交易所
+├    ├── dante-module-upms-logic -- UPMS 基础管理及共享代码模块组件
+├    └── dante-module-upms-rest -- UPMS 基础管理接口模块组件
+├── w3-dex -- 去中心化交易相关业务模块
+├    ├── w3-uni -- uni
+├    └── w3-panacake -- panacake
+├── w3-third -- 第三方服务数据提供商
+├    ├── w3-1 -- 第三方1
+└──  └── w3-2 -- 第三方2
+```
+
