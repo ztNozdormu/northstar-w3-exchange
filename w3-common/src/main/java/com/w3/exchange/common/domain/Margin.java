@@ -1,6 +1,7 @@
 package com.w3.exchange.common.domain;
 
 
+
 /**
  * <h2>Margin Endpoints</h2>
  */

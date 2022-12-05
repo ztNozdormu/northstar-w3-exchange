@@ -21,7 +21,7 @@ public final class ResponseHandler {
     }
 
     public static String handleResponse(Request request, boolean showLimitUsage) {
-        try (Response response = OkHttpUtils.okHttpClient.newCall(request).execute()) {
+        try (Response response = OkHttpUtils.builder().okHttpClient.newCall(request).execute()) {
             String responseAsString = getResponseBodyAsString(response.body());
 
             if (response.code() >= HTTP_STATUS_CODE_400 && response.code() <= HTTP_STATUS_CODE_499) {

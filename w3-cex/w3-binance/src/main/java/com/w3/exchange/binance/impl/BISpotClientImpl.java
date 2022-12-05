@@ -8,38 +8,38 @@ import com.w3.exchange.common.enums.DefaultUrls;
 /**
  * 一般交易场景
  */
-public class BiSpotClientImpl implements SpotClient {
+public class BISpotClientImpl implements SpotClient {
     private final String apiKey;
     private final String secretKey;
     private final String baseUrl;
     private boolean showLimitUsage = false;
 
-    public BiSpotClientImpl() {
+    public BISpotClientImpl() {
         this.apiKey = null;
         this.secretKey = null;
         this.baseUrl = DefaultUrls.PROD_URL;
     }
 
-    public BiSpotClientImpl(String baseUrl) {
+    public BISpotClientImpl(String baseUrl) {
         this.apiKey = null;
         this.secretKey = null;
         this.baseUrl = baseUrl;
     }
 
-    public BiSpotClientImpl(String baseUrl, boolean showLimitUsage) {
+    public BISpotClientImpl(String baseUrl, boolean showLimitUsage) {
         this.apiKey = null;
         this.secretKey = null;
         this.baseUrl = baseUrl;
         this.showLimitUsage = showLimitUsage;
     }
 
-    public BiSpotClientImpl(String apiKey, String secretKey) {
+    public BISpotClientImpl(String apiKey, String secretKey) {
         this.apiKey = apiKey;
         this.secretKey = secretKey;
         this.baseUrl = DefaultUrls.PROD_URL;
     }
 
-    public BiSpotClientImpl(String apiKey, String secretKey, String baseUrl) {
+    public BISpotClientImpl(String apiKey, String secretKey, String baseUrl) {
         this.apiKey = apiKey;
         this.secretKey = secretKey;
         this.baseUrl = baseUrl;

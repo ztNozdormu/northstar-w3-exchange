@@ -24,18 +24,18 @@ import java.util.Map;
  * <br>
  * Response will be returned as callback.
  */
-public class BiWebsocketClientImpl implements WebsocketClient {
+public class BIWebsocketClientImpl implements WebsocketClient {
     private final String baseUrl;
     private final Map<Integer, WebSocketConnection> connections = new HashMap<>();
     private final WebSocketCallback noopCallback = msg -> {
     };
-    private static final Logger logger = LoggerFactory.getLogger(BiWebsocketClientImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(BIWebsocketClientImpl.class);
 
-    public BiWebsocketClientImpl() {
+    public BIWebsocketClientImpl() {
         this.baseUrl = DefaultUrls.WS_URL;
     }
 
-    public BiWebsocketClientImpl(String baseUrl) {
+    public BIWebsocketClientImpl(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
