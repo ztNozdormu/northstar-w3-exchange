@@ -26,8 +26,8 @@ northstar-w3-exchange
 ├── w3-cex -- 中心化交易所交易相关业务模块
 ├    ├── w3-binance -- 币安交易所
 ├    ├── w3-okx -- 欧易交易所
-├    ├── dante-module-upms-logic -- UPMS 基础管理及共享代码模块组件
-├    └── dante-module-upms-rest -- UPMS 基础管理接口模块组件
+├    ├── xxx --xxx组件
+├    └── xxx -- xxx组件
 ├── w3-dex -- 去中心化交易相关业务模块
 ├    ├── w3-uni -- uni
 ├    └── w3-panacake -- panacake
