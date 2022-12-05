@@ -37,4 +37,4 @@ northstar-w3-exchange
 ```
 ### 开发日志
 2022-12-05
-  w3-binance模块,封装基础功能
+  w3-binance模块,封装基础功能,配置类定义
