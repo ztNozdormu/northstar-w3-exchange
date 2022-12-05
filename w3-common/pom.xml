@@ -9,7 +9,6 @@
     </parent>
 
     <name>${project.artifactId}</name>
-    <groupId>w3-common</groupId>
     <artifactId>w3-common</artifactId>
     <description>w3-common</description>
     <packaging>jar</packaging>

@@ -8,11 +8,15 @@
         <version>0.0.1</version>
     </parent>
 
-    <name>${project.artifactId}</name>
-    <groupId>w3-cex</groupId>
     <artifactId>w3-cex</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
     <description>w3-cex</description>
     <packaging>pom</packaging>
+
+
+    <modules>
+        <module>w3-binance</module>
+    </modules>
+
 
 </project>
