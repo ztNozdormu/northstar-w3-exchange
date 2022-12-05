@@ -1,4 +1,4 @@
-package com.w3.exchange.common.config;
+package com.w3.exchange.common.properties;
 
 import lombok.Data;
 
