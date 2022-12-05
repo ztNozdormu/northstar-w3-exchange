@@ -117,12 +117,12 @@
         </plugins>
     </build>
     <!--    maven私服仓库地址-->
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>maven-releases</name>
-            <url>http://192.168.1.100:8081/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>maven-releases</id>-->
+<!--            <name>maven-releases</name>-->
+<!--            <url>http://192.168.1.100:8081/repository/maven-releases/</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
 </project>
