@@ -13,6 +13,6 @@ import org.springframework.context.annotation.Configuration;
 public class BinanceConfiguration {
 
     private BinanceProperties binance;
-    
+
     // TODO 项目初始化注入的配置bean对象
 }
