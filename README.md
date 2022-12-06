@@ -13,11 +13,15 @@
       * panacake swap
   * 第三方数据服务提供商
   ```
-       参考:
-         https://zhuanlan.zhihu.com/p/379256098 第三方行情服务商参考
-         币安交易API binance-official-api-docs https://github.com/binance/binance-spot-api-docs
+       参考资料:
+         第三方行情服务商参考
+         https://zhuanlan.zhihu.com/p/379256098 
+         币安交易API 
+         binance-official-api-docs https://github.com/binance/binance-spot-api-docs
          https://binance-docs.github.io/apidocs/spot/en/#general-api-information
          https://github.com/binance/binance-connector-java
+         欧易交易所API
+         https://www.okx.com/docs-v5/zh/#overview 
   ```
 ### 项目结构
 ```
