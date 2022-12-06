@@ -7,9 +7,9 @@
         <artifactId>w3-cex</artifactId>
         <version>0.0.1</version>
     </parent>
-    <artifactId>w3-binance</artifactId>
+    <artifactId>w3-okx</artifactId>
     <name>${project.artifactId}</name>
-    <description>w3-binance</description>
+    <description>w3-okx</description>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -17,16 +17,6 @@
             <groupId>com.w3.exchange</groupId>
             <artifactId>w3-common</artifactId>
             <version>${w3.exchange.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>mockwebserver</artifactId>
-            <version>${okhttp.mockwebserver}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
 

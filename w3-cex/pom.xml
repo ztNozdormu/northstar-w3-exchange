@@ -16,6 +16,7 @@
 
     <modules>
         <module>w3-binance</module>
+        <module>w3-okx</module>
     </modules>
 
 
