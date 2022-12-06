@@ -5,6 +5,7 @@ import com.w3.exchange.binance.impl.BISpotClientImpl;
 import com.w3.exchange.binance.unit.MockData;
 import com.w3.exchange.binance.unit.MockWebServerDispatcher;
 import com.w3.exchange.common.enums.HttpMethod;
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.Before;
@@ -12,6 +13,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import java.util.LinkedHashMap;
 
+@Slf4j
 public class TestBlvtInfo {
     private MockWebServer mockWebServer;
     private String baseUrl;
