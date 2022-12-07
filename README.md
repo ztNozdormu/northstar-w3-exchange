@@ -44,3 +44,7 @@ northstar-w3-exchange
   w3-binance模块,封装基础功能,配置类定义
 2022-12-06
   w3-okx模块构建,资料收集学习
+2022-12-07
+  OKX market相关接口文档阅读
+    1. market获取系统服务时间接口
+    

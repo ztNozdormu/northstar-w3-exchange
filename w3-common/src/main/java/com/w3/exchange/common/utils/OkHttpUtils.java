@@ -32,10 +32,11 @@ public class OkHttpUtils {
     private String url;
     private Request.Builder request;
     // 开发环境用的 ShadowsocksR-dotnet4.0 免费版本 正式环境得使用外网服务器
+    // 安易代理  http://127.0.0.1:10809/ http://127.0.0.1:10808/
     // 代理服务器IP
     private static final String PROXY_IP = "127.0.0.1";
     // 代理服务器端口
-    private static final Integer PROXY_PORT = 1080;
+    private static final Integer PROXY_PORT = 10808;
     // 代理服务器用户名
     private static final String PROXY_USER_NAME = "";
     // 代理服务器密码
