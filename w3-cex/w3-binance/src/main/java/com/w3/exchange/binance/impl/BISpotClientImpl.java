@@ -2,13 +2,14 @@ package com.w3.exchange.binance.impl;
 
 
 import com.w3.exchange.binance.impl.biSpot.*;
+import com.w3.exchange.common.client.AbstractClient;
 import com.w3.exchange.common.client.SpotClient;
 import com.w3.exchange.common.enums.DefaultUrls;
 
 /**
  * 一般交易场景
  */
-public class BISpotClientImpl implements SpotClient {
+public class BISpotClientImpl extends AbstractClient {
     private final String apiKey;
     private final String secretKey;
     private final String baseUrl;
