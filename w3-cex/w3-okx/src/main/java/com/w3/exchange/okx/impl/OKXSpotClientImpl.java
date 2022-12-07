@@ -2,9 +2,8 @@ package com.w3.exchange.okx.impl;
 
 
 import com.w3.exchange.common.client.AbstractClient;
-import com.w3.exchange.common.client.SpotClient;
-import com.w3.exchange.common.domain.*;
 import com.w3.exchange.common.enums.DefaultUrls;
+import com.w3.exchange.okx.impl.okxSpot.OKXMarket;
 
 /**
  * 一般交易(现货)场景
@@ -12,13 +11,15 @@ import com.w3.exchange.common.enums.DefaultUrls;
 public class OKXSpotClientImpl extends AbstractClient {
     private final String apiKey;
     private final String secretKey;
+    private String passPhrase;
     private final String baseUrl;
     private boolean showLimitUsage = false;
+    private boolean isSimluate = false;
 
     public OKXSpotClientImpl() {
         this.apiKey = null;
         this.secretKey = null;
-        this.baseUrl = DefaultUrls.PROD_URL;
+        this.baseUrl = DefaultUrls.OKX_PROD_URL;
     }
 
     public OKXSpotClientImpl(String baseUrl) {
@@ -46,12 +47,21 @@ public class OKXSpotClientImpl extends AbstractClient {
         this.baseUrl = baseUrl;
     }
 
+    public OKXSpotClientImpl(boolean isSimluate, String passPhrase, String apiKey, String secretKey, String baseUrl) {
+        this.isSimluate = isSimluate;
+        this.passPhrase = passPhrase;
+        this.apiKey = apiKey;
+        this.secretKey = secretKey;
+        this.baseUrl = baseUrl;
+
+    }
+
     public void setShowLimitUsage(boolean showLimitUsage) {
         this.showLimitUsage = showLimitUsage;
     }
 
 
-//    @Override
+    //    @Override
 //    public BIBlvt createBlvt() {
 //        return new BIBlvt(baseUrl, apiKey, secretKey, showLimitUsage);
 //    }
@@ -94,10 +104,10 @@ public class OKXSpotClientImpl extends AbstractClient {
 //        return new BIMargin(baseUrl, apiKey, secretKey, showLimitUsage);
 //    }
 //
-//    @Override
-//    public BIMarket createMarket() {
-//        return new BIMarket(baseUrl, apiKey, showLimitUsage);
-//    }
+    @Override
+    public OKXMarket createMarket() {
+        return new OKXMarket(baseUrl, apiKey, secretKey, passPhrase, isSimluate);
+    }
 //
 //    @Override
 //    public BIMining createMining() {

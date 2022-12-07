@@ -20,38 +20,39 @@ import java.util.LinkedHashMap;
  */
 public class OKXMarket extends Market {
 
-    String passPhrase;
+    String  passPhrase;
 
     boolean isSimluate;
 
-    public OKXMarket(String baseUrl, String apiKey, boolean showLimitUsage) {
+    public OKXMarket(String baseUrl,String apiKey, String secertKey, String passPhrase, boolean isSimluate) {
         this.baseUrl = baseUrl;
         this.requestHandler = new RequestHandler(apiKey);
-        this.showLimitUsage = showLimitUsage;
+        this.isSimluate = isSimluate;
     }
-    private final String PING = "/api/v3/ping";
-    /**
-     * Test connectivity to the Rest API.
-     * <br><br>
-     * GET /api/v3/ping
-     * <br>
-     * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#test-connectivity">
-     *     https://binance-docs.github.io/apidocs/spot/en/#test-connectivity</a>
-     */
-    public String ping() {
-        return requestHandler.sendPublicRequest(baseUrl, PING, null, HttpMethod.GET, showLimitUsage);
-    }
+//    private final String PING = "/api/v3/ping";
+//    /**
+//     * Test connectivity to the Rest API.
+//     * <br><br>
+//     * GET /api/v3/ping
+//     * <br>
+//     * @return String
+//     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#test-connectivity">
+//     *     https://binance-docs.github.io/apidocs/spot/en/#test-connectivity</a>
+//     */
+//    public String ping() {
+//        return requestHandler.sendPublicRequest(baseUrl, PING, null, HttpMethod.GET, showLimitUsage);
+//    }
 
-    private final String TIME = "/api/v3/time";
+    private final String TIME = "/api/v5/public/time";
     /**
      * Test connectivity to the Rest API and get the current server time.
+     * 获取系统时间 Unix时间戳的毫秒数格式，如 1597026383085
      * <br><br>
-     * GET /api/v3/time
+     * GET /api/v5/public/time
      * <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#test-connectivity">
-     *     https://binance-docs.github.io/apidocs/spot/en/#check-server-time</a>
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-public-data-get-system-time">
+     *     https://www.okx.com/docs-v5/zh/#rest-api-public-data-get-system-time</a>
      */
     public String time() {
         return requestHandler.sendPublicRequest(baseUrl, TIME, null, HttpMethod.GET, showLimitUsage);
