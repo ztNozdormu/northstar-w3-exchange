@@ -23,6 +23,12 @@
          欧易交易所API
          https://www.okx.com/docs-v5/zh/#overview 
   ```
+### 第三方相关业务系统
+  * 数据源到任意数据源数据同步中间件
+  ```aidl
+     https://gitee.com/mydataharbor/mydataharbor?utm_source=oschina&utm_medium=link-mid&utm_campaign=new_wh
+  ```
+  * 
 ### 项目结构
 ```
 northstar-w3-exchange
@@ -47,4 +53,13 @@ northstar-w3-exchange
 2022-12-07
   OKX market相关接口文档阅读
     1. market获取系统服务时间接口
+2022-12-08
+  1.OKX market接口实现
+  2.rust池化技术 原理:https://zhuanlan.zhihu.com/p/480956704 案例:https://my.oschina.net/u/4090830/blog/5605669
+  3.rust解析json案例
+  4.worklist服务集成
+  5.机器学习框架Neuronika，速度堪比PyTorch https://view.inews.qq.com/a/20210618A04XPX00
+2022-12-09
+Java中的 “Pandas”:
+https://blog.csdn.net/cyj972628089/article/details/126127748
     
