@@ -351,31 +351,31 @@ public class OKXMarket extends Market {
         }
         return requestHandler.sendPublicRequest(baseUrl, BOOK_TICKER, parameters, HttpMethod.GET, showLimitUsage);
     }
-
-    private final String TICKER = "/api/v3/ticker";
+    // 获取单个产品行情信息
+    private final String TICKER = "/api/v5/market/ticker";
     /**
      * The window used to compute statistics will be no more than 59999ms from the requested windowSize.
      * openTime for /api/v3/ticker always starts on a minute, while the closeTime is the current time of the request.
      * As such, the effective window will be up to 59999ms wider than windowSize.
      * <br><br>
-     * GET /api/v3/ticker
+     * GET /api/v5/market/ticker
      * <br>
-     * https://binance-docs.github.io/apidocs/spot/en/#rolling-window-price-change-statistics
+     * https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-ticker
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
-     * symbol -- mandatory/string -- Either symbol or symbols must be provided
+     * instId -- mandatory/string -- Either symbol or symbols must be provided
      * Examples of accepted format for the symbols parameter:
      * ["BTCUSDT","BNBUSDT"]
      * or
      * %5B%22BTCUSDT%22,%22BNBUSDT%22%5D <br>
-     * symbols -- optional/string -- The maximum number of symbols allowed in a request is 100. <br>
+     * instId -- optional/string -- The maximum number of symbols allowed in a request is 100. <br>
      * windowSize -- optional/enum -- Defaults to 1d if no parameter provided <br>
      * type -- optional/enum -- Supported values: FULL or MINI. If none provided, the default is FULL <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#rolling-window-price-change-statistics">
-     *     https://binance-docs.github.io/apidocs/spot/en/#rolling-window-price-change-statistics</a>
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-ticker">
+     *     https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-ticker</a>
      */
     public String ticker(LinkedHashMap<String, Object> parameters) {
         if (parameters.containsKey("symbol") && parameters.containsKey("symbols")) {
