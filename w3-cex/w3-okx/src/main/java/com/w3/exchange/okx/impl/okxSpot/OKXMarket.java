@@ -264,12 +264,12 @@ public class OKXMarket extends Market {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
         return requestHandler.sendPublicRequest(baseUrl, AVG_PRICE, parameters, HttpMethod.GET, showLimitUsage);
     }
-
-    private final String TICKER_24H = "/api/v3/ticker/24hr";
+    // 获取所有产品行情信息 TODO 需要进一步细分
+    private final String TICKER_24H = "/api/v5/market/tickers";
     /**
      * 24 hour rolling window price change statistics. Careful when accessing this with no symbol.
      * <br><br>
-     * GET /api/v3/ticker/24hr
+     * GET /api/v5/market/tickers
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair
@@ -278,9 +278,10 @@ public class OKXMarket extends Market {
      * symbol -- optional/string -- the trading pair <br>
      * symbols -- optional/string <br>
      * type -- optional/enum -- Supported values: FULL or MINI. If none provided, the default is FULL <br>
+     * instType FUTURES
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics">
-     *     https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics</a>
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-tickers">
+     *     https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-tickers</a>
      */
     public String ticker24H(LinkedHashMap<String, Object> parameters) {
         if (parameters.containsKey("symbol") && parameters.containsKey("symbols")) {
