@@ -105,7 +105,7 @@ public class OKXMarket extends Market {
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
-     * symbol -- mandatory/string <br>
+     * instId -- mandatory/string <br>
      * limit -- optional/integer -- limit the results
      *            Default 100; max 5000. Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000] <br>
      * @return String
@@ -113,7 +113,7 @@ public class OKXMarket extends Market {
      *     获取产品深度 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-book</a>
      */
     public String depth(LinkedHashMap<String, Object> parameters) {
-        ParameterChecker.checkParameter(parameters, "symbol", String.class);
+        ParameterChecker.checkParameter(parameters, "instId", String.class);
         return requestHandler.sendPublicRequest(baseUrl, DEPTH, parameters, HttpMethod.GET, showLimitUsage);
     }
     //  TODO 获取产品轻量深度 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-lite-book
@@ -141,27 +141,28 @@ public class OKXMarket extends Market {
         ParameterChecker.checkParameter(parameters, "instId", String.class);
         return requestHandler.sendPublicRequest(baseUrl, TRADES, parameters, HttpMethod.GET, showLimitUsage);
     }
-
-    private final String HISTORICAL_TRADES = "/api/v3/historicalTrades";
+    // 获取交易产品公共历史成交数据
+    // TODO 获取期权品种公共成交数据 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-option-trades
+    private final String HISTORICAL_TRADES = "/api/v5/market/history-trades";
     /**
+     * 获取交易产品公共历史成交数据
      * Get older market trades.
      * <br><br>
-     * GET /api/v3/historicalTrades
+     * GET /api/v5/market/history-trades
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
-     * symbol -- mandatory/string <br>
+     * instId -- mandatory/string <br>
      * limit -- optional/integer -- limit the result Default 500; max 1000 <br>
-     * fromId -- optional/long -- trade id to fetch from. Default gets most recent trades <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup">
-     *     https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup</a>
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-trades-history">
+     *     https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-trades-history</a>
      *
      */
     public String historicalTrades(LinkedHashMap<String, Object> parameters) {
-        ParameterChecker.checkParameter(parameters, "symbol", String.class);
+        ParameterChecker.checkParameter(parameters, "instId", String.class);
         return requestHandler.sendWithApiKeyRequest(baseUrl, HISTORICAL_TRADES, parameters, HttpMethod.GET, showLimitUsage);
     }
 
@@ -190,29 +191,31 @@ public class OKXMarket extends Market {
         return requestHandler.sendPublicRequest(baseUrl, AGG_TRADES, parameters, HttpMethod.GET, showLimitUsage);
     }
 
-    private final String KLINES = "/api/v3/klines";
+    // 获取交易产品K线数据
+    private final String KLINES = "/api/v5/market/candles";
     /**
      * Kline/candlestick bars for a symbol.
      * Klines are uniquely identified by their open time.
      * <br><br>
-     * GET /api/v3/klines
+     * GET /api/v5/market/candles
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
-     * symbol -- mandatory/string <br>
+     *
+     * instId -- mandatory/string <br>
      * interval -- mandatory/string <br>
      * startTime -- optional/long <br>
      * endTime -- optional/long <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
-     * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data">
-     *     https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data</a>
+     * @return String k线图 List<List<>> 内层的一个list 代表一个柱子
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-candlesticks">
+     *     https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-candlesticks</a>
      */
     public String klines(LinkedHashMap<String, Object> parameters) {
-        ParameterChecker.checkParameter(parameters, "symbol", String.class);
-        ParameterChecker.checkParameter(parameters, "interval", String.class);
+        ParameterChecker.checkParameter(parameters, "instId", String.class);
+//        ParameterChecker.checkParameter(parameters, "interval", String.class);
         return requestHandler.sendPublicRequest(baseUrl, KLINES, parameters, HttpMethod.GET, showLimitUsage);
     }
 
