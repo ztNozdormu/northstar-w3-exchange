@@ -96,9 +96,10 @@ public class OKXMarket extends Market {
         return requestHandler.sendPublicRequest(baseUrl, EXCHANGE_INFO, parameters, HttpMethod.GET, showLimitUsage);
     }
 
-    private final String DEPTH = "/api/v3/depth";
+    private final String DEPTH = "/api/v5/market/books";
     /**
-     * GET /api/v3/depth
+     * 获取产品深度
+     * GET /api/v5/market/books
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair
@@ -108,13 +109,14 @@ public class OKXMarket extends Market {
      * limit -- optional/integer -- limit the results
      *            Default 100; max 5000. Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000] <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#order-book">
-     *     https://binance-docs.github.io/apidocs/spot/en/#order-book</a>
+     * @see <a href=" https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-book">
+     *     获取产品深度 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-book</a>
      */
     public String depth(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
         return requestHandler.sendPublicRequest(baseUrl, DEPTH, parameters, HttpMethod.GET, showLimitUsage);
     }
+    // 获取产品轻量深度 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-lite-book TODO
 
     private final String TRADES = "/api/v3/trades";
     /**
