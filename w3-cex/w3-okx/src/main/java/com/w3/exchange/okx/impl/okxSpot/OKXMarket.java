@@ -116,26 +116,29 @@ public class OKXMarket extends Market {
         ParameterChecker.checkParameter(parameters, "symbol", String.class);
         return requestHandler.sendPublicRequest(baseUrl, DEPTH, parameters, HttpMethod.GET, showLimitUsage);
     }
-    // 获取产品轻量深度 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-lite-book TODO
+    //  TODO 获取产品轻量深度 https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-order-lite-book
 
-    private final String TRADES = "/api/v3/trades";
+    private final String TRADES = "/api/v5/market/trades";
     /**
+     * 获取交易产品公共成交数据(交易记录)
      * Get recent trades.
      * <br><br>
-     * GET /api/v3/trades
+     * GET /api/v5/market/trades
      * <br>
      * @param
      * parameters LinkedHashedMap of String,Object pair
      *            where String is the name of the parameter and Object is the value of the parameter
      * <br><br>
-     * symbol -- mandatory/string <br>
+     * param.add("instId","BTC-USDT");
+     * param.add("limit","10");
+     * instId -- mandatory/string <br>
      * limit -- optional/integer -- limit the results Default 500; max 1000 <br>
      * @return String
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list">
-     *     https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list</a>
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-trades">
+     *     https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-trades</a>
      */
     public String trades(LinkedHashMap<String, Object> parameters) {
-        ParameterChecker.checkParameter(parameters, "symbol", String.class);
+        ParameterChecker.checkParameter(parameters, "instId", String.class);
         return requestHandler.sendPublicRequest(baseUrl, TRADES, parameters, HttpMethod.GET, showLimitUsage);
     }
 
