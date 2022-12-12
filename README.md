@@ -22,6 +22,8 @@
          https://github.com/binance/binance-connector-java
          欧易交易所API
          https://www.okx.com/docs-v5/zh/#overview 
+         策略参考:
+         https://www.tradingview.com/
   ```
 ### 第三方相关业务系统
   * 数据源到任意数据源数据同步中间件
