@@ -31,8 +31,32 @@ public class OKXMarket extends Market {
         this.isSimluate = isSimluate;
     }
 
-    private final String TIME = "/api/v5/public/time";
+    private final String STATUS = "/api/v5/system/status";
+    /**
+     * Status
+     * 获取系统升级事件的状态。
+     * <br><br>
+     *
+     * GET /api/v5/system/status
+     * <br>
+     *
+     * @param parameters  LinkedHashedMap of String,Object pair
+     *   where String is the name of the parameter and Object is the value of the parameter
+     *  <br><br>
+     * state -- String	No	系统的状态，scheduled:等待中 ;
+     *  ongoing:进行中 ; pre_open:预开放；completed:已完成 canceled: 已取消
+     * 当维护时间过长，会存在预开放时间，一般持续10分钟左右。
+     * 不填写此参数，默认返回 等待中、进行中和预开放 的数据 <br>
+     * @return String
+     * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-status">
+     * https://www.okx.com/docs-v5/zh/#rest-api-status</a>
+     *
+     */
+    public String status() {
+        return requestHandler.sendPublicRequest(baseUrl, STATUS, null, HttpMethod.GET, showLimitUsage);
+    }
 
+    private final String TIME = "/api/v5/public/time";
     /**
      * Test connectivity to the Rest API and get the current server time.
      * 获取系统时间 Unix时间戳的毫秒数格式，如 1597026383085
