@@ -9,8 +9,11 @@ import java.util.LinkedHashMap;
 
 /**
  * 行情数据功能模块下的API接口不需要身份验证。
+ *
  * <h2>Market Endpoints</h2>
  * All endpoints under the
+ *
+ *
  * <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data">Market Data Endpoint</a>
  * section of the API documentation will be implemented in this class.
  * <br>
@@ -60,7 +63,7 @@ public class OKXMarket extends Market {
      *                   <br><br>
      *                   instType	  -- String	是	产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权 <br>
      *                   uly	      -- String	否	标的指数 适用于交割/永续/期权，如 BTC-USD <br>
-     *                   instFamily -- String	否	交易品种 适用于交割/永续/期权，如 BTC-USD <br>
+     *                   instFamily   -- String	否	交易品种 适用于交割/永续/期权，如 BTC-USD <br>
      *                   <br>
      * @return String
      * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-market-data-get-tickers">

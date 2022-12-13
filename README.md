@@ -51,16 +51,18 @@ northstar-w3-exchange
 1.rust池化技术 原理:https://zhuanlan.zhihu.com/p/480956704 案例:https://my.oschina.net/u/4090830/blog/5605669
 2.机器学习框架Neuronika，速度堪比PyTorch https://view.inews.qq.com/a/20210618A04XPX00
 ### 开发日志
-2022-12-05
+* 2022-12-05
   w3-binance模块,封装基础功能,配置类定义
-2022-12-06
+* 2022-12-06
   w3-okx模块构建,资料收集学习
-2022-12-07
+* 2022-12-07
   OKX market相关接口文档阅读
-    1. market获取系统服务时间接口
-2022-12-08
-  1.OKX market接口实现
-2022-12-09
-Java中的 “Pandas”:
-https://blog.csdn.net/cyj972628089/article/details/126127748
+    market获取系统服务时间接口
+* 2022-12-08
+    OKX market接口实现
+* 2022-12-09
+   1. Java中的 “Pandas”(https://blog.csdn.net/cyj972628089/article/details/126127748)
+* 2022-12-12
+   1. 公共数据接口模块封装
+
     
