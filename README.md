@@ -54,6 +54,7 @@ northstar-w3-exchange
 2.机器学习框架Neuronika，速度堪比PyTorch https://view.inews.qq.com/a/20210618A04XPX00
 3. https://my.oschina.net/u/4865736/blog/4877966  DolphinDB + Tushare 数据回测方案
 4. https://zhuanlan.zhihu.com/p/499932095 回测案例
+5. 交易验证/闪兑/网格交易/赚币/交易大数据暂未封装
 ### 开发日志
 * 2022-12-05
   w3-binance模块,封装基础功能,配置类定义
@@ -73,6 +74,7 @@ northstar-w3-exchange
 * 2022-12-14
     1. 交易相关接口封装
     2. 测试案例
+    3. 交易验证/闪兑/网格交易/赚币/交易大数据暂未封装
   
 
     
