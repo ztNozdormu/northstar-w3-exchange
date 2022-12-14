@@ -24,10 +24,12 @@
          https://www.okx.com/docs-v5/zh/#overview 
          策略参考:
          https://www.tradingview.com/
+         回测数据来源
+         https://www.163.com/dy/article/HACPOOKH0539O6LM.html
   ```
 ### 第三方相关业务系统
   * 数据源到任意数据源数据同步中间件
-  ```aidl
+  ```
      https://gitee.com/mydataharbor/mydataharbor?utm_source=oschina&utm_medium=link-mid&utm_campaign=new_wh
   ```
   * 
@@ -50,6 +52,8 @@ northstar-w3-exchange
 ### tips
 1.rust池化技术 原理:https://zhuanlan.zhihu.com/p/480956704 案例:https://my.oschina.net/u/4090830/blog/5605669
 2.机器学习框架Neuronika，速度堪比PyTorch https://view.inews.qq.com/a/20210618A04XPX00
+3. https://my.oschina.net/u/4865736/blog/4877966  DolphinDB + Tushare 数据回测方案
+4. https://zhuanlan.zhihu.com/p/499932095 回测案例
 ### 开发日志
 * 2022-12-05
   w3-binance模块,封装基础功能,配置类定义
@@ -66,6 +70,9 @@ northstar-w3-exchange
    1. 公共数据接口模块封装
 * 2022-12-13
    1. 账户/子账户/资金相关接口封装
+* 2022-12-14
+    1. 交易相关接口封装
+    2. 测试案例
   
 
     
