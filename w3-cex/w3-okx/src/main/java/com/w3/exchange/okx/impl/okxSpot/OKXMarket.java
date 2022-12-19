@@ -32,31 +32,32 @@ public class OKXMarket extends Market {
     }
 
     private final String STATUS = "/api/v5/system/status";
+
     /**
      * Status
      * 获取系统升级事件的状态。
      * <br><br>
-     *
+     * <p>
      * GET /api/v5/system/status
      * <br>
      *
-     * @param parameters  LinkedHashedMap of String,Object pair
-     *   where String is the name of the parameter and Object is the value of the parameter
-     *  <br><br>
-     * state -- String	No	系统的状态，scheduled:等待中 ;
-     *  ongoing:进行中 ; pre_open:预开放；completed:已完成 canceled: 已取消
-     * 当维护时间过长，会存在预开放时间，一般持续10分钟左右。
-     * 不填写此参数，默认返回 等待中、进行中和预开放 的数据 <br>
+     * @param parameters LinkedHashedMap of String,Object pair
+     *                   where String is the name of the parameter and Object is the value of the parameter
+     *                   <br><br>
+     *                   state -- String	No	系统的状态，scheduled:等待中 ;
+     *                   ongoing:进行中 ; pre_open:预开放；completed:已完成 canceled: 已取消
+     *                   当维护时间过长，会存在预开放时间，一般持续10分钟左右。
+     *                   不填写此参数，默认返回 等待中、进行中和预开放 的数据 <br>
      * @return String
      * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-status">
      * https://www.okx.com/docs-v5/zh/#rest-api-status</a>
-     *
      */
     public String status() {
         return requestHandler.sendPublicRequest(baseUrl, STATUS, null, HttpMethod.GET, showLimitUsage);
     }
 
     private final String TIME = "/api/v5/public/time";
+
     /**
      * Test connectivity to the Rest API and get the current server time.
      * 获取系统时间 Unix时间戳的毫秒数格式，如 1597026383085
@@ -334,7 +335,16 @@ public class OKXMarket extends Market {
      * @param parameters LinkedHashedMap of String,Object pair
      *                   where String is the name of the parameter and Object is the value of the parameter
      *                   <br><br>
-     *                   instType -- mandatory/string -- the trading pair <br>
+     *                   instType -- String	是	产品类型
+     *                   MARGIN：币币杠杆
+     *                   SWAP：永续合约
+     *                   FUTURES：交割合约
+     *                   OPTION：期权 <br>
+     *                   uly -- String	否	标的指数
+     *                   适用于交割/永续/期权 <br>
+     *                   instFamily -- String	否	交易品种
+     *                   适用于交割/永续/期权 <br>
+     *                   instId -- String	否	产品ID，如 BTC-USD-SWAP <br>
      * @return String
      * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-public-data-get-mark-price">
      * https://www.okx.com/docs-v5/zh/#rest-api-public-data-get-mark-price</a>
