@@ -39,7 +39,9 @@ public abstract class AbstractClient implements SpotClient {
     public Market createMarket() {
         return null;
     }
-
+    public Market createPubMarket() {
+        return null;
+    }
     public Margin createMargin() {
         return null;
     }

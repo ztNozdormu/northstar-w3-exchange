@@ -15,6 +15,7 @@ public interface SpotClient {
     Futures createFutures();
     GiftCard createGiftCard();
     Market createMarket();
+    Market createPubMarket();
     Margin createMargin();
     Mining createMining();
     NFT createNFT();

@@ -4,6 +4,7 @@ package com.w3.exchange.okx.impl;
 import com.w3.exchange.common.client.AbstractClient;
 import com.w3.exchange.common.enums.DefaultUrls;
 import com.w3.exchange.okx.impl.okxSpot.OKXMarket;
+import com.w3.exchange.okx.impl.okxSpot.OKXPDMarket;
 
 /**
  * 一般交易(现货)场景
@@ -108,6 +109,11 @@ public class OKXSpotClientImpl extends AbstractClient {
     public OKXMarket createMarket() {
         return new OKXMarket(baseUrl, apiKey, secretKey, passPhrase, isSimluate);
     }
+    @Override
+    public OKXPDMarket createPubMarket() {
+        return new OKXPDMarket(baseUrl, apiKey, secretKey, passPhrase, isSimluate);
+    }
+
 //
 //    @Override
 //    public BIMining createMining() {
