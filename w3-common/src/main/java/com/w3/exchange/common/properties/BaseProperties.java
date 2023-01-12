@@ -20,4 +20,12 @@ public class BaseProperties {
 
     public boolean showLimitUsage;
 
+    public String baseUrl;
+
+    public String apiKey;
+
+    public String secretKey;
+
+
+
 }

@@ -5,10 +5,14 @@ import com.w3.exchange.common.client.AbstractClient;
 import com.w3.exchange.common.enums.DefaultUrls;
 import com.w3.exchange.okx.impl.okxSpot.OKXMarket;
 import com.w3.exchange.okx.impl.okxSpot.OKXPDMarket;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * 一般交易(现货)场景
  */
+@Builder
+@Data
 public class OKXSpotClientImpl extends AbstractClient {
     private final String apiKey;
     private final String secretKey;
@@ -17,49 +21,49 @@ public class OKXSpotClientImpl extends AbstractClient {
     private boolean showLimitUsage = false;
     private boolean isSimluate = false;
 
-    public OKXSpotClientImpl() {
-        this.apiKey = null;
-        this.secretKey = null;
-        this.baseUrl = DefaultUrls.OKX_PROD_URL;
-    }
+//    public OKXSpotClientImpl.builder().build() {
+//        this.apiKey = null;
+//        this.secretKey = null;
+//        this.baseUrl = DefaultUrls.OKX_PROD_URL;
+//    }
 
-    public OKXSpotClientImpl(String baseUrl) {
-        this.apiKey = null;
-        this.secretKey = null;
-        this.baseUrl = baseUrl;
-    }
-
-    public OKXSpotClientImpl(String baseUrl, boolean showLimitUsage) {
-        this.apiKey = null;
-        this.secretKey = null;
-        this.baseUrl = baseUrl;
-        this.showLimitUsage = showLimitUsage;
-    }
-
-    public OKXSpotClientImpl(String apiKey, String secretKey) {
-        this.apiKey = apiKey;
-        this.secretKey = secretKey;
-        this.baseUrl = DefaultUrls.PROD_URL;
-    }
-
-    public OKXSpotClientImpl(String apiKey, String secretKey, String baseUrl) {
-        this.apiKey = apiKey;
-        this.secretKey = secretKey;
-        this.baseUrl = baseUrl;
-    }
-
-    public OKXSpotClientImpl(boolean isSimluate, String passPhrase, String apiKey, String secretKey, String baseUrl) {
-        this.isSimluate = isSimluate;
-        this.passPhrase = passPhrase;
-        this.apiKey = apiKey;
-        this.secretKey = secretKey;
-        this.baseUrl = baseUrl;
-
-    }
-
-    public void setShowLimitUsage(boolean showLimitUsage) {
-        this.showLimitUsage = showLimitUsage;
-    }
+//    public OKXSpotClientImpl(String baseUrl) {
+//        this.apiKey = null;
+//        this.secretKey = null;
+//        this.baseUrl = baseUrl;
+//    }
+//
+//    public OKXSpotClientImpl(String baseUrl, boolean showLimitUsage) {
+//        this.apiKey = null;
+//        this.secretKey = null;
+//        this.baseUrl = baseUrl;
+//        this.showLimitUsage = showLimitUsage;
+//    }
+//
+//    public OKXSpotClientImpl(String apiKey, String secretKey) {
+//        this.apiKey = apiKey;
+//        this.secretKey = secretKey;
+//        this.baseUrl = DefaultUrls.PROD_URL;
+//    }
+//
+//    public OKXSpotClientImpl(String apiKey, String secretKey, String baseUrl) {
+//        this.apiKey = apiKey;
+//        this.secretKey = secretKey;
+//        this.baseUrl = baseUrl;
+//    }
+//
+//    public OKXSpotClientImpl(boolean isSimluate, String passPhrase, String apiKey, String secretKey, String baseUrl) {
+//        this.isSimluate = isSimluate;
+//        this.passPhrase = passPhrase;
+//        this.apiKey = apiKey;
+//        this.secretKey = secretKey;
+//        this.baseUrl = baseUrl;
+//
+//    }
+//
+//    public void setShowLimitUsage(boolean showLimitUsage) {
+//        this.showLimitUsage = showLimitUsage;
+//    }
 
 
     //    @Override

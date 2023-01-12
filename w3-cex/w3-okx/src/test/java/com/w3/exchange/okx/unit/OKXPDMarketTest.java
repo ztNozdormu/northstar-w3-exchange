@@ -15,7 +15,7 @@ public class OKXPDMarketTest  {
 
     @Test
     public void convertContractCoin() {
-       OKXSpotClientImpl client = new OKXSpotClientImpl();
+       OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "BTC-USDT-SWAP");
@@ -26,7 +26,7 @@ public class OKXPDMarketTest  {
 
     @Test
     public void fundingRate() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "ETH-USDT-SWAP");
@@ -36,7 +36,7 @@ public class OKXPDMarketTest  {
 
     @Test
     public void instruments() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      SPOT：币币 MARGIN：币币杠杆 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instType", "SPOT");
@@ -46,7 +46,7 @@ public class OKXPDMarketTest  {
 
     @Test
     public void priceLimit() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      SPOT：币币 MARGIN：币币杠杆 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "BTC-USDT-SWAP");
@@ -56,7 +56,7 @@ public class OKXPDMarketTest  {
 
     @Test
     public void insuranceFund() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      SPOT：币币 MARGIN：币币杠杆 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instType", "SWAP");

@@ -11,7 +11,7 @@ public final class ServerTime {
     private static final Logger logger = LoggerFactory.getLogger(ServerTime.class);
     public static void main(String[] args) {
 
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         String result = client.createMarket().time();
         logger.info(result);
     }

@@ -12,7 +12,7 @@ public class OKXMarketTest {
 
     @Test
     public void tickers() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instType", "SWAP");
@@ -23,7 +23,7 @@ public class OKXMarketTest {
 
     @Test
     public void ticker() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "ETH-USDT-SWAP");
@@ -32,7 +32,7 @@ public class OKXMarketTest {
     }
     @Test
     public void depth() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "BTC-USDT");
@@ -43,7 +43,7 @@ public class OKXMarketTest {
 
     @Test
     public void blockTicker24H() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "BTC-USDT-SWAP");
@@ -53,7 +53,7 @@ public class OKXMarketTest {
 
     @Test
     public void blockTickers24H() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instType", "SWAP");
@@ -62,7 +62,7 @@ public class OKXMarketTest {
     }
     @Test
     public void blockTrades() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "BTC-USDT");
@@ -72,7 +72,7 @@ public class OKXMarketTest {
 
     @Test
     public void klines() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instId", "BTC-USDT");
@@ -82,7 +82,7 @@ public class OKXMarketTest {
 
     @Test
     public void markPrice() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instType", "SWAP");
@@ -93,7 +93,7 @@ public class OKXMarketTest {
 
     @Test
     public void platform24Volume() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      instType -- String 是 产品类型 SPOT：币币 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
 //        parameters.put("instType", "SWAP");
@@ -103,7 +103,7 @@ public class OKXMarketTest {
 
     @Test
     public void status() {
-        OKXSpotClientImpl client = new OKXSpotClientImpl();
+        OKXSpotClientImpl client = OKXSpotClientImpl.builder().build();
         String result = client.createMarket().status();
         log.info("获取平台24小时总成交量 :{}", result);
     }
