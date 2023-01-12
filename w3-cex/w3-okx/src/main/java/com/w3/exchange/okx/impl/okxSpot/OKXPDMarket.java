@@ -49,7 +49,7 @@ public class OKXPDMarket extends Market {
      * @see <a href="https://www.okx.com/docs-v5/zh/#rest-api-public-data-get-instruments">
      * https://www.okx.com/docs-v5/zh/#rest-api-public-data-get-instruments</a>
      */
-    public String instruments(LinkedHashMap<String, Object> parameters) {
+    public String exchangeInfo(LinkedHashMap<String, Object> parameters) {
         ParameterChecker.checkParameter(parameters, "instType", String.class);
         return requestHandler.sendPublicRequest(baseUrl, INSTRUMENTS, parameters, HttpMethod.GET, showLimitUsage);
     }

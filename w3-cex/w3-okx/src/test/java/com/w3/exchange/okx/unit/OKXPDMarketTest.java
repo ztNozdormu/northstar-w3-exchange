@@ -40,7 +40,7 @@ public class OKXPDMarketTest  {
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
 //      SPOT：币币 MARGIN：币币杠杆 SWAP：永续合约 FUTURES：交割合约 OPTION：期权
         parameters.put("instType", "SPOT");
-        String result = client.createPubMarket().instruments(parameters);
+        String result = client.createPubMarket().exchangeInfo(parameters);
         log.info("获取所有可交易产品的信息列表:{}", result);
     }
 
