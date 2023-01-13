@@ -1,6 +1,6 @@
 package com.w3.exchange.common.enums;
 
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -29,7 +29,19 @@ public enum ExchangeType {
           this.name = name;
      }
 
-
+     /**
+      * 转换为字典 key-value结构
+      * @return
+      */
+     public static List<Map<Integer,String>> convertToDictMap() {
+          List<Map<Integer,String>> mapList = new ArrayList<>();
+          Arrays.stream(ExchangeType.values()).forEach(exchangeType -> {
+               Map<Integer,String> map = new HashMap<>();
+               map.put(exchangeType.value,exchangeType.name);
+               mapList.add(map);
+          });
+          return mapList;
+     }
      /**
       * 通过指定的value获取对应的枚举信息
       *
