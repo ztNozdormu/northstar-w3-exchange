@@ -10,9 +10,14 @@ public enum ProdFinaceType {
      */
     SPOT,
     /**
+     * 币币杠杆
+     */
+    MARGIN,
+    /**
      * 永续合约
      */
     SWAP,
+
     /**
      * 交割合约
      */
