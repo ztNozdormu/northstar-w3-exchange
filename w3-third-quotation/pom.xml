@@ -8,9 +8,9 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>w3-quotation</artifactId>
+    <artifactId>w3-third-quotation</artifactId>
     <name>${project.artifactId}</name>
-    <description>w3-cex</description>
+    <description>w3-third-quotation</description>
     <packaging>pom</packaging>
 
 
