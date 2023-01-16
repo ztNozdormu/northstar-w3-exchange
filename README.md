@@ -78,7 +78,11 @@ northstar-w3-exchange
 * 2022-12-15
     1. 测试案例
     2. (1)回测相关准备 (2)接入交易应用
-3. 
+* 2023-01-13
+    JDK9后版本升级注意事项：
+    ```
+     https://goodluckpeng.blog.csdn.net/article/details/127768286?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127768286-blog-126178828.pc_relevant_3mothn_strategy_and_data_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127768286-blog-126178828.pc_relevant_3mothn_strategy_and_data_recovery&utm_relevant_index=1
+    ```
   
 
     

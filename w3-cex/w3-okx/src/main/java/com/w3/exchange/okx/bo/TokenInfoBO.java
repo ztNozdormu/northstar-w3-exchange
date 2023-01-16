@@ -8,6 +8,9 @@ import lombok.Data;
 @Data
 public class TokenInfoBO {
 
+    public TokenInfoBO(){
+
+    }
     /**
      * {"code":"0","data":[
      * {"alias":"","baseCcy":"BTC","category":"1","ctMult":"","ctType":"","ctVal":"","ctValCcy":"","expTime":"",
@@ -28,97 +31,97 @@ public class TokenInfoBO {
      * next_quarter：次季度
      * 仅适用于交割
      */
-    private String alias;
+    public String alias;
     /**
      * 交易货币币种，如 BTC-USDT 中的 BTC ，仅适用于币币/币币杠杆
      */
-    private String baseCcy;
+    public String baseCcy;
     /**
      * 币种类别，注意：此参数已废弃
      */
-    private String category;
+    public String category;
     /**
      * 合约乘数，仅适用于交割/永续/期权
      */
-    private String ctMult;
+    public String ctMult;
     /**
      * 上线日期
      * Unix时间戳的毫秒数格式，如 1597026383085
      */
-    private String listTime;
+    public String listTime;
     /**
      * 合约面值，仅适用于交割/永续/期权
      */
-    private String ctVal;
+    public String ctVal;
     /**
      * 合约面值计价币种，仅适用于交割/永续/期权
      */
-    private String ctValCcy;
+    public String ctValCcy;
     /**
      * 交割/行权日期，仅适用于交割 和 期权
      * Unix时间戳的毫秒数格式，如 1597026383085
      */
-    private String expTime;
+    public String expTime;
     /**
      * 交易品种，如 BTC-USD，仅适用于交割/永续/期权
      */
-    private String instFamily;
+    public String instFamily;
     /**
      * 产品id， 如 BTC-USD-SWAP
      */
-    private String instId;
+    public String instId;
     /**
      * 产品类型
      */
-    private String instType;
+    public String instType;
     /**
      * 该instId支持的最大杠杆倍数，不适用于币币、期权
      */
-    private String lever;
+    public String lever;
     /**
      * 下单数量精度，如 BTC-USDT-SWAP：1
      */
-    private String lotSz;
+    public String lotSz;
     /**
      * 合约或现货冰山委托的单笔最大委托数量
      */
-    private String maxIcebergSz;
+    public String maxIcebergSz;
     /**
      *
      */
-    private String maxLmtSz;
+    public String maxLmtSz;
     /**
      * 合约或现货市价单的单笔最大委托数量
      */
-    private String maxMktSz;
+    public String maxMktSz;
     /**
      * 合约或现货止盈止损委托的单笔最大委托数量
      */
-    private String maxStopSz;
+    public String maxStopSz;
     /**
      * 合约或现货计划委托委托的单笔最大委托数量
      */
-    private String maxTriggerSz;
+    public String maxTriggerSz;
     /**
      * 合约或现货时间加权单的单笔最大委托数量
      */
-    private String maxTwapSz;
+    public String maxTwapSz;
     /**
      * 最小下单数量
      */
-    private String minSz;
+    public String minSz;
     /**
      * 期权类型，C或P 仅适用于期权
      */
-    private String optType;
+    public String optType;
     /**
      * 计价货币币种，如 BTC-USDT 中的USDT ，仅适用于币币/币币杠杆
      */
-    private String quoteCcy;
+    public String quoteCcy;
     /**
      * 盈亏结算和保证金币种，如 BTC 仅适用于交割/永续/期权
      */
-    private String settleCcy;
+    public String settleCcy;
     /**
      * 产品状态
      * live：交易中
@@ -128,19 +131,19 @@ public class TokenInfoBO {
      * 当合约预上线时，状态变更为预上线（即新生成一个合约，新合约会处于预上线状态）；
      * 当产品下线的时候（如交割合约被交割的时候，期权合约被行权的时候），查询不到该产品
      */
-    private String state;
+    public String state;
     /**
      * 行权价格，仅适用于期权
      */
-    private String stk;
+    public String stk;
     /**
      *  下单价格精度，如 0.0001
      */
-    private String tickSz;
+    public String tickSz;
     /**
      * 标的指数，如 BTC-USD，仅适用于交割/永续/期权
      */
-    private String uly;
+    public String uly;
 
 
 }
