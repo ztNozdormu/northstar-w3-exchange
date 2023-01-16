@@ -28,6 +28,7 @@
     <modules>
         <module>w3-common</module>
         <module>w3-cex</module>
+        <module>w3-quotation</module>
     </modules>
 
     <dependencyManagement>

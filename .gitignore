@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Compiled class file
 *.class
 
@@ -56,4 +55,3 @@ build/
 
 ### VS Code ###
 .vscode/
->>>>>>> b2204dd (w3-exchange项目初始化)

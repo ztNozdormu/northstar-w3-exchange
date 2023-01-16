@@ -82,7 +82,10 @@ northstar-w3-exchange
     JDK9后版本升级注意事项：
     ```
      https://goodluckpeng.blog.csdn.net/article/details/127768286?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127768286-blog-126178828.pc_relevant_3mothn_strategy_and_data_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-127768286-blog-126178828.pc_relevant_3mothn_strategy_and_data_recovery&utm_relevant_index=1
-    ```
+    ``` 
+* 2013-01-16
+ 1. 集成第三方行情服务商CryptoCompare 主要是币种排名接口
+  
   
 
     
