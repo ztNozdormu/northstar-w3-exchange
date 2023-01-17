@@ -18,4 +18,7 @@ For further reference, please consider the following sections:
    * 排行数据：提供交易对的Top交易所的交易量数据
    * 流数据：提供价格、交易事件的订阅与通知接口
    * 新闻数据：提供主流媒体的新闻、文章数据
+   集成计划：
+   * 排行榜
+   * 交易信号
 
