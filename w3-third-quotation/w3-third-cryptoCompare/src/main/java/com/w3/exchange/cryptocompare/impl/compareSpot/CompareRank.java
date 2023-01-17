@@ -18,7 +18,7 @@ public class CompareRank extends Rank {
 
 
     /**
-     * 币种在所有市场（交易所）总交易量排行榜
+     * 过去24小时内,币种在所有市场（交易所）总交易量排行榜
      */
     private final String MARKET_VOL_RANK = "/data/top/totalvolfull";
 

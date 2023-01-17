@@ -1,4 +1,4 @@
-package com.w3.exchange.okx.unit;
+package com.w3.exchange.okx.examples.market;
 
 import com.w3.exchange.okx.impl.OKXSpotClientImpl;
 import lombok.extern.slf4j.Slf4j;
