@@ -89,4 +89,5 @@ public abstract class AbstractClient implements SpotClient {
     public Wallet createWallet() {
         return null;
     }
+
 }
