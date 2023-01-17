@@ -74,6 +74,7 @@ public class CompareRank extends Rank {
     public String marketVolRank(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendPublicRequest(baseUrl, MARKET_VOL_RANK, parameters, HttpMethod.GET, showLimitUsage);
     }
+
     /**
      * 币种在前20个市场（交易所）总交易量排行榜
      */
@@ -103,4 +104,67 @@ public class CompareRank extends Rank {
     public String market20VolRank(LinkedHashMap<String, Object> parameters) {
         return requestHandler.sendPublicRequest(baseUrl, MARKET20_VOL_RANK, parameters, HttpMethod.GET, showLimitUsage);
     }
+
+
+    /**
+     * 交易对最高交易量交易所排行榜
+     */
+    private final String EXCHANGE_VOL_RANK = "/data/top/exchanges";
+
+    /**
+     * exchangeVolRank 交易对最高交易量交易所排行榜 Market Volume ranking
+     * Top Exchanges Volume Data by Pair
+     * Get top exchanges by volume for a currency pair. The number of exchanges you get is the minimum
+     * of the limit you set (default 5) and the total number of exchanges available
+     * <br><br>
+     * <p>
+     * GET /data/top/exchanges
+     * <br>
+     * API KEY in URL - just append ?  or &api_key={your_api_key} the the end of your request url
+     * API KEY in HEADER - add the following header to your request: authorization: Apikey {your_api_key}.
+     * @param parameters LinkedHashedMap of String,Object pair
+     *                   where String is the name of the parameter and Object is the value of the parameter
+     *                   <br><br>
+     *                   fsym -- BTC   统计的目标币种
+     *                   tsym -- USDT 统计/计算币种
+     * @return String
+     * @see <a href="https://min-api.cryptocompare.com/documentation?key=Toplists&cat=topExchangesEndpoint">
+     * https://min-api.cryptocompare.com/documentation?key=Toplists&cat=topExchangesEndpoint</a>
+     *
+     */
+    public String exchangeVolRank(LinkedHashMap<String, Object> parameters) {
+        return requestHandler.sendPublicRequest(baseUrl, EXCHANGE_VOL_RANK, parameters, HttpMethod.GET, showLimitUsage);
+    }
+
+    /**
+     * 交易对最高交易量交易所排行榜
+     */
+    private final String EXCHANGE_FULL_VOL_RANK = "/data/top/exchanges/full";
+
+    /**
+     *
+     * Top Exchanges Full Data By Pair
+     * Get top exchanges by volume for a currency pair plus the full CCCAGG data. The number of exchanges
+     * you get is the minimum of the limit you set (default 5) and the total number of exchanges available
+     * <br><br>
+     * <p>
+     * GET /data/top/exchanges/full
+     * <br>
+     * API KEY in URL - just append ?  or &api_key={your_api_key} the the end of your request url
+     * API KEY in HEADER - add the following header to your request: authorization: Apikey {your_api_key}.
+     * @param parameters LinkedHashedMap of String,Object pair
+     *                   where String is the name of the parameter and Object is the value of the parameter
+     *                   <br><br>
+     *                   fsym -- BTC   统计的目标币种
+     *                   tsym -- USDT 统计/计算币种
+     * @return String
+     * @see <a href="https://min-api.cryptocompare.com/documentation?key=Toplists&cat=topExchangesFullEndpoint">
+     * https://min-api.cryptocompare.com/documentation?key=Toplists&cat=topExchangesFullEndpoint</a>
+     *
+     */
+    public String exchangeFullVolRank(LinkedHashMap<String, Object> parameters) {
+        return requestHandler.sendPublicRequest(baseUrl, EXCHANGE_FULL_VOL_RANK, parameters, HttpMethod.GET, showLimitUsage);
+    }
+
+
 }
