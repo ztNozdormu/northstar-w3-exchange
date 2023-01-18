@@ -1,7 +1,9 @@
 package com.w3.exchange.cryptocompare.impl;
 
 import com.w3.exchange.common.client.third.ThirdAbstractClient;
+import com.w3.exchange.common.domain.third.TradingSignal;
 import com.w3.exchange.cryptocompare.impl.compareSpot.CompareRank;
+import com.w3.exchange.cryptocompare.impl.compareSpot.CompareTradingSignal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -20,4 +22,7 @@ public class CompareClientImpl extends ThirdAbstractClient {
     public CompareRank createRank() {
         return new CompareRank(baseUrl,apiKey);
     }
+
+    @Override
+    public TradingSignal createTradingSignal() { return new CompareTradingSignal(baseUrl,apiKey);}
 }
