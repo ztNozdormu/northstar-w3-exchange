@@ -7,72 +7,80 @@ import lombok.Data;
  */
 @Data
 public class CoinInfoRankBO {
-    /**
-     * 7605
-     */
-    private String id;
-    /**
-     * ETH
-     */
-    private String Name;
-    /**
-     * Ethereum
-     */
-    private String fullName;
-    /**
-     * ETH
-     */
-    private String internal;
-    /**
-     * /media/37746238/eth.png
-     */
-    private String imageUrl;
-    /**
-     * /coins/eth/overview
-     */
-    private String url;
-    /**
-     * Ethash
-     */
-    private String algorithm;
-    /**
-     * PoS
-     */
-    private String proofType;
-    /**
-     *
-     */
-    private Rating rating;
-    /**
-     * 0
-     */
-    private String  netHashesPerSecond;
-    /**
-     * 16189079
-     */
-    private String  blockNumber;
-    /**
-     * 12.070420567276791
-     */
-    private String  blockTime;
-    /**
-     * 0.28197768698142733
-     */
-    private String  blockReward;
-    /**
-     * 2015-07-30
-     */
-    private String  assetLaunchDate;
-    /**
-     * -1
-     */
-    private String  maxSupply;
-    /**
-     * 1
-     */
-    private String  type;
-    /**
-     * Webpagecoinp
-     */
-    private String  documentType;
+
+//   public CoinInfoRankBO(){
+//
+//   }
+//
+//   /**
+//    * 7605
+//    */
+//   private String Id;
+//   /**
+//    * ETH
+//    */
+//   private String Name;
+//   /**
+//    * Ethereum
+//    */
+//   private String FullName;
+//   /**
+//    * ETH
+//    */
+//   private String Internal;
+//   /**
+//    * /media/37746238/eth.png
+//    */
+//   private String ImageUrl;
+//   /**
+//    * /coins/eth/overview
+//    */
+//   private String Url;
+//   /**
+//    * Ethash
+//    */
+//   private String Algorithm;
+//   /**
+//    * PoS
+//    */
+//   private String ProofType;
+//   /**
+//    *
+//    */
+//   private Rating Rating;
+//   /**
+//    * 0
+//    */
+//   private String  NetHashesPerSecond;
+//   /**
+//    * 16189079
+//    */
+//   private String  BlockNumber;
+//   /**
+//    * 12.070420567276791
+//    */
+//   private String  BlockTime;
+//   /**
+//    * 0.28197768698142733
+//    */
+//   private String  BlockReward;
+//   /**
+//    * 2015-07-30
+//    */
+//   private String  AssetLaunchDate;
+//   /**
+//    * -1
+//    */
+//   private String  MaxSupply;
+//   /**
+//    * 1
+//    */
+//   private String  Type;
+//   /**
+//    * Webpagecoinp
+//    */
+//   private String  DocumentType;
+
+   private CoinInfo CoinInfo;
+
 }

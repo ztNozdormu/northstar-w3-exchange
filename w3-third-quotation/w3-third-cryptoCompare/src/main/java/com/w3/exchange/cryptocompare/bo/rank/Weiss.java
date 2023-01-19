@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Weiss {
 
-    private String  rating;
-    private String  technologyAdoptionRating;
-    private String  marketPerformanceRating;
+    private String  Rating;
+    private String  TechnologyAdoptionRating;
+    private String  MarketPerformanceRating;
 }
