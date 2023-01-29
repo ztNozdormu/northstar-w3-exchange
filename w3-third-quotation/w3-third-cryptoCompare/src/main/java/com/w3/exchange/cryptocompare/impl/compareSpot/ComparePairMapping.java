@@ -19,36 +19,33 @@ public class ComparePairMapping extends PairMapping {
 
 
     /**
-     * 过去24小时内,币种在所有市场（交易所）总交易量排行榜
+     *  通过symbol(token名称),获取不同交易所token交易对基本信息
      */
-    private final String MARKET_VOL_RANK = "/data/top/totalvolfull";
+    private final String PAIR_MAPPING_FSYM = "/data/v2/pair/mapping/fsym";
 
     /**
-     * marketVolRank 过去24小时内，通过所有市场的总交易量币种排行榜  Market Volume ranking
-     * Toplist by 24H Volume Full Data
-     * Get a number of top coins by their total volume across all markets in the last 24 hours.
-     * Default value is first page (0) and the top 10 coins.
+     * marketVolRank 通过symbol(token名称),获取不同交易所token交易对基本信息  Market Volume ranking
+     * Returns the current pair mapping by mapped symbol.
      * <br><br>
      * <p>
-     * GET /data/top/totalvolfull
+     * GET /data/v2/pair/mapping/fsym
      * <br>
      * API KEY in URL - just append ?  or &api_key={your_api_key} the the end of your request url
      * API KEY in HEADER - add the following header to your request: authorization: Apikey {your_api_key}.
      * @param parameters LinkedHashedMap of String,Object pair
      *                   where String is the name of the parameter and Object is the value of the parameter
      *                   <br><br>
-     *                   limit -- int 默认10
-     *                   tsym -- USDT 统计/计算币种
+     *                   fsym -- BTC 查询的币种
      * @return String
-     * @see <a href="https://min-api.cryptocompare.com/documentation?key=Toplists&cat=TopTotalVolumeEndpointFull">
-     * https://min-api.cryptocompare.com/documentation?key=Toplists&cat=TopTotalVolumeEndpointFull</a>
+     * @see <a href="https://min-api.cryptocompare.com/documentation?key=PairMapping&cat=pairMappingMappedSymbolEndpoint">
+     * https://min-api.cryptocompare.com/documentation?key=PairMapping&cat=pairMappingMappedSymbolEndpoint</a>
      * <br>
      * examples <br>
-     *   https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USDT <br>
-     *   https://min-api.cryptocompare.com/data/top/totalvolfull?tsym=USD&page=2 <br>
+     *   https://min-api.cryptocompare.com/data/v2/pair/mapping/fsym?fsym=BTC <br>
+     *   https://min-api.cryptocompare.com/data/v2/pair/mapping/fsym?fsym=BTC <br>
      */
-    public String marketVolRank(LinkedHashMap<String, Object> parameters) {
-        return requestHandler.sendPublicRequest(baseUrl, MARKET_VOL_RANK, parameters, HttpMethod.GET, showLimitUsage);
+    public String pairMappingFsym(LinkedHashMap<String, Object> parameters) {
+        return requestHandler.sendPublicRequest(baseUrl, PAIR_MAPPING_FSYM, parameters, HttpMethod.GET, showLimitUsage);
     }
 
 
