@@ -21,4 +21,5 @@ For further reference, please consider the following sections:
    集成计划：
    * 排行榜
    * 交易信号
+   * 所有token信息
 
