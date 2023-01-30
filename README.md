@@ -87,6 +87,6 @@ northstar-w3-exchange
  1. 集成第三方行情服务商CryptoCompare 主要是币种排名接口
 * 2013-01-17
  1. 第三方行情服务商CryptoCompare,币种交易转账相关排行榜接口封装
-  
-
+* 2013-01-29
+ 1. 第三方行情服务商CryptoCompare,币种交易对信息接口封装
     
