@@ -10,11 +10,11 @@ public class CandleBaseBO {
     /**
      * 开始时间，Unix时间戳的毫秒数格式，如 1597026383085
      */
-   private String ts;
+    private String ts;
     /**
      * 开盘价格
      */
-   private String o;
+    private String o;
     /**
      * 最高价格
      */
