@@ -51,7 +51,8 @@ northstar-w3-exchange
 └──  └── w3-2 -- 第三方2
 ```
 ### tips
-1.rust池化技术 原理:https://zhuanlan.zhihu.com/p/480956704 案例:https://my.oschina.net/u/4090830/blog/5605669
+1.rust池化技术 原理:https://zhuanlan.zhihu.com/p/480956704
+案例:https://my.oschina.net/u/4090830/blog/5605669
 2.机器学习框架Neuronika，速度堪比PyTorch https://view.inews.qq.com/a/20210618A04XPX00
 3. https://my.oschina.net/u/4865736/blog/4877966  DolphinDB + Tushare 数据回测方案
 4. https://zhuanlan.zhihu.com/p/499932095 回测案例

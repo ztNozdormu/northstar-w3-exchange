@@ -89,4 +89,8 @@ public class CoinInfo {
      * Webpagecoinp
      */
     private String  DocumentType;
+    /**
+     * 排名序号
+     */
+    private Integer index;
 }
