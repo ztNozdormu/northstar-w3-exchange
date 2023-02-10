@@ -10,7 +10,7 @@ public class WebSocketConnection extends WebSocketListener {
 
     private static final AtomicInteger connectionCounter = new AtomicInteger(0);
     private static final int NORMAL_CLOSURE_STATUS = 1000;
-    private static final OkHttpClient client = OkHttpUtils.okHttpClient;
+    private static final OkHttpClient client = OkHttpUtils.builder().okHttpClient;
 
     private final WebSocketCallback onOpenCallback;
     private final WebSocketCallback onMessageCallback;

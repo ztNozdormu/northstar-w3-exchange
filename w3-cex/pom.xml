@@ -13,7 +13,6 @@
     <description>w3-cex</description>
     <packaging>pom</packaging>
 
-
     <modules>
         <module>w3-binance</module>
         <module>w3-okx</module>

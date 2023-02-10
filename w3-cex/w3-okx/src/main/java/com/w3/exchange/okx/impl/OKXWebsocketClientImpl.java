@@ -1,10 +1,12 @@
-package com.w3.exchange.binance.impl;
+package com.w3.exchange.okx.impl;
 
 
 import com.w3.exchange.common.client.WebsocketClient;
 import com.w3.exchange.common.enums.DefaultUrls;
 import com.w3.exchange.common.exceptions.ExchangeConnectorException;
 import com.w3.exchange.common.utils.*;
+import lombok.Builder;
+import lombok.Data;
 import okhttp3.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,27 +17,28 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Websocket 行情客户端实现
+ *
  * <h2>Websocket Streams</h2>
  * All stream endpoints under the
+ * <a href="https://www.okx.com/docs-v5/zh/#websocket-api-overview">websocket api overview</a>
  * <a href="https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams">Websocket Market Streams</a> and
  * <a href="https://binance-docs.github.io/apidocs/spot/en/#user-data-streams">User Data Streams</a>
  * section of the API documentation will be implemented in this class.
  * <br>
  * Response will be returned as callback.
  */
-public class BIWebsocketClientImpl implements WebsocketClient {
+public class OKXWebsocketClientImpl implements WebsocketClient {
     private final String baseUrl;
     private final Map<Integer, WebSocketConnection> connections = new HashMap<>();
     private final WebSocketCallback noopCallback = msg -> {
     };
-    private static final Logger logger = LoggerFactory.getLogger(BIWebsocketClientImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(OKXWebsocketClientImpl.class);
 
-    public BIWebsocketClientImpl() {
-        this.baseUrl = DefaultUrls.WS_URL;
+    public OKXWebsocketClientImpl() {
+        this.baseUrl = DefaultUrls.WS_URL_OKX;
     }
 
-    public BIWebsocketClientImpl(String baseUrl) {
+    public OKXWebsocketClientImpl(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
@@ -290,7 +293,7 @@ public class BIWebsocketClientImpl implements WebsocketClient {
      * <br><br>
      * Update Speed: Real-time
      *
-     * @param symbol     Name of trading pair
+     * @param symbol Name of trading pair
      * @param windowSize Window Sizes: 1h,4h
      * @return int - Connection ID
      * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-rolling-window-statistics-streams">
@@ -300,9 +303,9 @@ public class BIWebsocketClientImpl implements WebsocketClient {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         ParameterChecker.checkParameterType(symbol, String.class, "windowSize");
         ArrayList<String> allowedWindowSize = new ArrayList<String>() {{
-            add("1h");
-            add("4h");
-        }};
+                add("1h");
+                add("4h");
+            }};
         if (!allowedWindowSize.contains(windowSize)) {
             throw new ExchangeConnectorException(String.format("\"%s\" is not a valid window size.", windowSize));
         }
@@ -324,9 +327,9 @@ public class BIWebsocketClientImpl implements WebsocketClient {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
         ParameterChecker.checkParameterType(symbol, String.class, "windowSize");
         ArrayList<String> allowedWindowSize = new ArrayList<String>() {{
-            add("1h");
-            add("4h");
-        }};
+                add("1h");
+                add("4h");
+            }};
         if (!allowedWindowSize.contains(windowSize)) {
             throw new ExchangeConnectorException(String.format("\"%s\" is not a valid window size.", windowSize));
         }
@@ -351,9 +354,9 @@ public class BIWebsocketClientImpl implements WebsocketClient {
     public int allRollingWindowTicker(String windowSize, WebSocketCallback callback) {
         ParameterChecker.checkParameterType(windowSize, String.class, "windowSize");
         ArrayList<String> allowedWindowSize = new ArrayList<String>() {{
-            add("1h");
-            add("4h");
-        }};
+                add("1h");
+                add("4h");
+            }};
         if (!allowedWindowSize.contains(windowSize.toLowerCase())) {
             throw new ExchangeConnectorException(String.format("\"%s\" is not a valid window size.", windowSize.toLowerCase()));
         }
@@ -631,7 +634,7 @@ public class BIWebsocketClientImpl implements WebsocketClient {
     }
 
     public boolean isConnected() {
-        logger.info("connections(s) Connected{}", connections.size());
-        return !connections.isEmpty();
+        logger.info("Closing {} connections(s)", connections.size());
+        return connections.isEmpty();
     }
 }
