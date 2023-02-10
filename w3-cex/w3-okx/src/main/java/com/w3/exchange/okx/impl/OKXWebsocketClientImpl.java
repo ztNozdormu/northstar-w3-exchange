@@ -5,12 +5,15 @@ import com.w3.exchange.common.client.WebsocketClient;
 import com.w3.exchange.common.enums.DefaultUrls;
 import com.w3.exchange.common.exceptions.ExchangeConnectorException;
 import com.w3.exchange.common.utils.*;
+import com.w3.exchange.okx.wArg.WebSocketArg;
 import lombok.Builder;
 import lombok.Data;
 import okhttp3.Request;
+import okio.ByteString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.CharBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -144,8 +147,9 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
     @Override
     public int klineStream(String symbol, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
-        Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@kline_%s", baseUrl, symbol.toLowerCase(), interval));
-        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
+        String arg = WebSocketArg.buildKline(WebSocketArg.OpEnum.SUB,WebSocketArg.CandleEnum.valueOf(interval),"BTC-USDT-SWAP");
+        Request request = RequestBuilder.buildOkxWebsocketRequest(String.format("%s/ws/v5/public", baseUrl));
+        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request,arg);
     }
 
     /**
@@ -627,6 +631,20 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
             Request request
     ) {
         WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
+        connection.connect();
+        int connectionId = connection.getConnectionId();
+        connections.put(connectionId, connection);
+        return connectionId;
+    }
+    private int createConnection(
+            WebSocketCallback onOpenCallback,
+            WebSocketCallback onMessageCallback,
+            WebSocketCallback onClosingCallback,
+            WebSocketCallback onFailureCallback,
+            Request request,
+            String message
+    ) {
+        WebSocketConnection connection = new WebSocketConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request, message);
         connection.connect();
         int connectionId = connection.getConnectionId();
         connections.put(connectionId, connection);

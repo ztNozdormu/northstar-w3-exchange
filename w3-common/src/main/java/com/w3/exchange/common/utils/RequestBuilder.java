@@ -94,4 +94,14 @@ public final class RequestBuilder {
     public static Request buildWebsocketRequest(String fullUrl) {
         return new Request.Builder().url(fullUrl).build();
     }
+    /**
+     * Content-Type: text/html;
+     * Content-Type: application/json;charset:utf-8;
+     * Content-Type: application/x-www-form-urlencoded;charset:utf-8;
+     */
+    public static Request buildOkxWebsocketRequest(String fullUrl) {
+        return new Request.Builder().url(fullUrl)
+                .addHeader("Content-Type", "application/json;charset:utf-8")
+                .build();
+    }
 }

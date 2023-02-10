@@ -25,6 +25,8 @@ public class WebSocketConnection extends WebSocketListener {
 
     private final Object mutex;
 
+    private String message;
+
     public WebSocketConnection(
             WebSocketCallback onOpenCallback,
             WebSocketCallback onMessageCallback,
@@ -41,6 +43,26 @@ public class WebSocketConnection extends WebSocketListener {
         this.streamName = request.url().host() + request.url().encodedPath();
         this.webSocket = null;
         this.mutex = new Object();
+    }
+
+    public WebSocketConnection(
+            WebSocketCallback onOpenCallback,
+            WebSocketCallback onMessageCallback,
+            WebSocketCallback onClosingCallback,
+            WebSocketCallback onFailureCallback,
+            Request request,
+            String message
+    ) {
+        this.onOpenCallback = onOpenCallback;
+        this.onMessageCallback = onMessageCallback;
+        this.onClosingCallback = onClosingCallback;
+        this.onFailureCallback = onFailureCallback;
+        this.connectionId = WebSocketConnection.connectionCounter.incrementAndGet();
+        this.request = request;
+        this.streamName = request.url().host() + request.url().encodedPath();
+        this.webSocket = null;
+        this.mutex = new Object();
+        this.message = message;
     }
 
     public void connect() {
@@ -69,6 +91,9 @@ public class WebSocketConnection extends WebSocketListener {
     @Override
     public void onOpen(WebSocket ws, Response response) {
         log.info("[Connection {}] Connected to Server", connectionId);
+        if(this.message!=null){
+            ws.send(message);
+        }
         onOpenCallback.onReceive(null);
     }
 
