@@ -147,8 +147,8 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
     @Override
     public int klineStream(String symbol, String interval, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
-        String arg = WebSocketArg.buildKline(WebSocketArg.OpEnum.SUB,WebSocketArg.CandleEnum.valueOf(interval),"BTC-USDT-SWAP");
-        Request request = RequestBuilder.buildOkxWebsocketRequest(String.format("%s/ws/v5/public", baseUrl));
+        String arg = WebSocketArg.buildKline(WebSocketArg.OpEnum.SUB,WebSocketArg.CandleEnum.valueOf(interval),symbol);
+        Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/v5/public", baseUrl));
         return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request,arg);
     }
 
@@ -237,7 +237,7 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
     @Override
     public int symbolTicker(String symbol, WebSocketCallback callback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
-        return symbolTicker(symbol.toLowerCase(), noopCallback, callback, noopCallback, noopCallback);
+        return symbolTicker(symbol.toUpperCase(), noopCallback, callback, noopCallback, noopCallback);
     }
 
     /**
@@ -253,8 +253,9 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
     @Override
     public int symbolTicker(String symbol, WebSocketCallback onOpenCallback, WebSocketCallback onMessageCallback, WebSocketCallback onClosingCallback, WebSocketCallback onFailureCallback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
-        Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/%s@ticker", baseUrl, symbol.toLowerCase()));
-        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request);
+        String arg = WebSocketArg.buildSubTickers(WebSocketArg.OpEnum.SUB,symbol);
+        Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/v5/public", baseUrl));
+        return createConnection(onOpenCallback, onMessageCallback, onClosingCallback, onFailureCallback, request,arg);
     }
 
     /**
