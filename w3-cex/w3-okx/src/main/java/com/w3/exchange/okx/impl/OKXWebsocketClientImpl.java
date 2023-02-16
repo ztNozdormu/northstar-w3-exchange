@@ -130,7 +130,7 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
     @Override
     public int klineStream(String symbol, String interval, WebSocketCallback callback) {
         ParameterChecker.checkParameterType(symbol, String.class, "symbol");
-        return klineStream(symbol.toLowerCase(), interval, noopCallback, callback, noopCallback, noopCallback);
+        return klineStream(symbol.toUpperCase(), interval, noopCallback, callback, noopCallback, noopCallback);
     }
 
     /**
