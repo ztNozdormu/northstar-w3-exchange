@@ -189,20 +189,22 @@ public class OKXWebsocketClientImpl implements WebsocketClient {
     }
 
     /**
-     * 24hr rolling window mini-ticker statistics for all symbols that changed in an array.
-     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
-     * Note that only tickers that have changed will be present in the array.
+     * WebSocket 频道分成两类： 公共频道 和 私有频道
+     * 公共频道无需登录，包括行情频道，K线频道，交易数据频道，资金费率频道，限价范围频道，深度数据频道，标记价格频道等。
+     * 私有频道需登录，包括用户账户频道，用户交易频道，用户持仓频道等。
+     * 用户可以选择订阅一个或者多个频道，多个频道总长度不能超过4,096个字节。
      * <br><br>
      * !miniTicker@arr
      * <br><br>
      * Update Speed: Real-time
      *
      * @return int - Connection ID
-     * @see <a href="https://binance-docs.github.io/apidocs/spot/en/#all-market-mini-tickers-stream">
-     * https://binance-docs.github.io/apidocs/spot/en/#all-market-mini-tickers-stream</a>
+     * @see <a href="https://www.okx.com/docs-v5/zh/#websocket-api-subscribe">
+     * https://www.okx.com/docs-v5/zh/#websocket-api-subscribe</a>
      */
     @Override
     public int allMiniTickerStream(WebSocketCallback callback) {
+        Request request = RequestBuilder.buildWebsocketRequest(String.format("%s/ws/v5/public", baseUrl));
         return allMiniTickerStream(noopCallback, callback, noopCallback, noopCallback);
     }
 

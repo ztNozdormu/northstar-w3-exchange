@@ -17,6 +17,24 @@ public class WebSocketArg {
      * @return
      */
 
+    public static String buildSubSwapTickers(OpEnum opEnum, String instId) {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("op", opEnum.name);
+        List<JSONObject> args = new ArrayList<>();
+        JSONObject object = new JSONObject();
+        object.put("channel", "tickers");
+        object.put("instId", instId);
+        args.add(object);
+        jsonObject.put("args", args);
+        return jsonObject.toString();
+    }
+
+    /**
+     * @param opEnum subscribe unsubscribe
+     * @param instId
+     * @return
+     */
+
     public static String buildSubTickers(OpEnum opEnum, String instId) {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("op", opEnum.name);
@@ -49,6 +67,7 @@ public class WebSocketArg {
     }
 
     /**
+     * TODO
      * @param opEnum subscribe unsubscribe
      * @return
      */

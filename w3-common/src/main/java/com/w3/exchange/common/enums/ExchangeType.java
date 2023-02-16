@@ -22,11 +22,11 @@ public enum ExchangeType {
 
      private final int value;
 
-     private final String name;
+     private final String desc;
 
-     ExchangeType(Integer value, String name) {
+     ExchangeType(Integer value, String desc) {
           this.value = value;
-          this.name = name;
+          this.desc = desc;
      }
 
      /**
@@ -37,7 +37,7 @@ public enum ExchangeType {
           List<Map<Integer,String>> mapList = new ArrayList<>();
           Arrays.stream(ExchangeType.values()).forEach(exchangeType -> {
                Map<Integer,String> map = new HashMap<>();
-               map.put(exchangeType.value,exchangeType.name);
+               map.put(exchangeType.value,exchangeType.desc);
                mapList.add(map);
           });
           return mapList;
@@ -64,7 +64,7 @@ public enum ExchangeType {
      public static String getNameByValue(Integer value) {
           try {
                ExchangeType instance = getInstance(value);
-               return instance.name;
+               return instance.desc;
           } catch (Exception e) {
                return "";
           }
