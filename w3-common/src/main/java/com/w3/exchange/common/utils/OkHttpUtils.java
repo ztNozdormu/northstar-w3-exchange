@@ -51,9 +51,9 @@ public class OkHttpUtils {
                 if (okHttpClient == null) {
                     TrustManager[] trustManagers = buildTrustManagers();
                     okHttpClient = new OkHttpClient.Builder()
-                            .connectTimeout(15, TimeUnit.SECONDS)
+                            .connectTimeout(30, TimeUnit.SECONDS)
                             .writeTimeout(20, TimeUnit.SECONDS)
-                            .readTimeout(20, TimeUnit.SECONDS)
+                            .readTimeout(60, TimeUnit.SECONDS)
                             .sslSocketFactory(createSSLSocketFactory(trustManagers), (X509TrustManager) trustManagers[0])
                             .hostnameVerifier((hostName, session) -> true)
                             .proxy(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(PROXY_IP, PROXY_PORT)))
