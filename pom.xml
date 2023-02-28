@@ -82,6 +82,18 @@
 
     <profiles>
         <profile>
+            <id>${java.version}</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>${java.version}</jdk>
+            </activation>
+            <properties>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <maven.compiler.source>${java.version}</maven.compiler.source>
+                <maven.compiler.target>${java.version}</maven.compiler.target>
+            </properties>
+        </profile>
+        <profile>
             <id>release</id>
             <distributionManagement>
                 <snapshotRepository>
