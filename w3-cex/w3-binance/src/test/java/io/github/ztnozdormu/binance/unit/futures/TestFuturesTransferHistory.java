@@ -1,0 +1,57 @@
+package io.github.ztnozdormu.binance.unit.futures;
+
+
+import io.github.ztnozdormu.binance.impl.BISpotClientImpl;
+import io.github.ztnozdormu.binance.unit.MockData;
+import io.github.ztnozdormu.binance.unit.MockWebServerDispatcher;
+import io.github.ztnozdormu.common.enums.HttpMethod;
+import io.github.ztnozdormu.common.exceptions.ExchangeConnectorException;
+import okhttp3.mockwebserver.Dispatcher;
+import okhttp3.mockwebserver.MockWebServer;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.LinkedHashMap;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
+public class TestFuturesTransferHistory {
+    private MockWebServer mockWebServer;
+    private String baseUrl;
+
+    private final long startTime = 12345678L;
+
+    @Before
+    public void init() {
+        this.mockWebServer = new MockWebServer();
+        this.baseUrl = mockWebServer.url(MockData.PREFIX).toString();
+    }
+
+    @Test
+    public void testFuturesTransferHistoryWithoutParameters() {
+        String path = "/sapi/v1/futures/transfer";
+        LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
+
+        Dispatcher dispatcher = MockWebServerDispatcher.getDispatcher(MockData.PREFIX, path, MockData.MOCK_RESPONSE, HttpMethod.GET, MockData.HTTP_STATUS_OK);
+        mockWebServer.setDispatcher(dispatcher);
+
+        BISpotClientImpl client = new BISpotClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
+        assertThrows(ExchangeConnectorException.class, () -> client.createFutures().futuresTransferHistory(parameters));
+    }
+
+    @Test
+    public void testFuturesTransferHistory() {
+        String path = "/sapi/v1/futures/transfer?asset=USDT&startTime=12345678";
+        LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
+        parameters.put("asset", "USDT");
+        parameters.put("startTime", startTime);
+
+        Dispatcher dispatcher = MockWebServerDispatcher.getDispatcher(MockData.PREFIX, path, MockData.MOCK_RESPONSE, HttpMethod.GET, MockData.HTTP_STATUS_OK);
+        mockWebServer.setDispatcher(dispatcher);
+
+        BISpotClientImpl client = new BISpotClientImpl(MockData.API_KEY, MockData.SECRET_KEY, baseUrl);
+        String result = client.createFutures().futuresTransferHistory(parameters);
+        assertEquals(MockData.MOCK_RESPONSE, result);
+    }
+}
